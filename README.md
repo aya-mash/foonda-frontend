@@ -21,7 +21,6 @@ Foonda is an innovative platform designed to help South Africans explore educati
 - Backend: Apollo Server with GraphQL
 - Mock Data: JSON mock data generated with @faker-js/faker
 - Hosting: Netlify (frontend) and Heroku/Render (backend)
-- State Management: Apollo Client
 - Real-time Updates: Stay updated with the latest course offerings, career opportunities, and bursaries using GraphQL Subscriptions.
 - Styling: MUI (Material-UI) for UI components and theme management
 - Testing: Jest and React Testing Library
