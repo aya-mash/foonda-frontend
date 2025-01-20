@@ -19,7 +19,7 @@ Foonda is an innovative platform designed to help South Africans explore educati
 - Vite: Fast build tool and development server for React apps.
 - UI/UX: Material-UI (MUI) for components and styling
 - Backend: Apollo Server with GraphQL
-- Mock Data: JSON mock data generated with @faker-js/faker
+- Mock Data: Created a custom script generating mock JSON data for json-graphql-server, simulating a full fake GraphQL API with zero coding in less than 30 seconds.
 - Hosting: Netlify (frontend) and Heroku/Render (backend)
 - Real-time Updates: Stay updated with the latest course offerings, career opportunities, and bursaries using GraphQL Subscriptions.
 - Styling: MUI (Material-UI) for UI components and theme management
