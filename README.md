@@ -1,50 +1,109 @@
-# React + TypeScript + Vite
+# Foonda: Empowering Education and Career Discovery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Foonda is an innovative platform designed to help South Africans explore educational opportunities, bursaries, and career paths tailored to their individual strengths, interests, and aspirations. By providing a personalized experience, Foonda bridges the gap between ambition and opportunity, offering a centralized hub for students, parents, and professionals to make informed decisions about their future.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Comprehensive Dataset: Includes information on South African universities, TVET colleges, bursaries, courses, and careers.
+- Personalized Recommendations: Guides users based on their interests, strengths, and educational background.
+- Relational Data: Simulates a real-world database with connected data for institutions, bursaries, careers, and users.
+- Scalable Architecture: Designed for future enhancements, including a robust backend API and dynamic user profiles.
 
-## Expanding the ESLint configuration
+### Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React: JavaScript library for building user interfaces.
+- TypeScript: JavaScript with static types.
+- Zustand: State management library for managing app state.
+- Tailwind CSS: Utility-first CSS framework for fast UI design.
+- Framer Motion: Animation library for interactive and engaging animations.
+- Vite: Fast build tool and development server for React apps.
+- UI/UX: Material-UI (MUI) for components and styling
+- Backend: Apollo Server with GraphQL
+- Mock Data: JSON mock data generated with @faker-js/faker
+- Hosting: Netlify (frontend) and Heroku/Render (backend)
+- Real-time Updates: Stay updated with the latest course offerings, career opportunities, and bursaries using GraphQL Subscriptions.
+- Styling: MUI (Material-UI) for UI components and theme management
+- Testing: Jest and React Testing Library
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js installed on your machine.
+- ```json-graphql-server``` package installed globally (if not, install it using ``` npm install -g json-graphql-server ```).
+
+
+
+
+### Steps to Set Up the Mock Server
+
+#### Clone the repository:
+
+```
+git clone https://github.com/aya-mash/foonda.git
+cd foonda
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### Navigate to the mock-data directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+cd mock-data
+```
+
+### Generate the mock data:
+
+```
+node dataGenerator.js
+```
+
+### This will create a foonda_data.json file containing realistic relational mock data.
+
+
+
+### Start the mock server:
+
+```
+json-graphql-server foonda_data.json
+```
+
+The server will be available at http://localhost:3000/graphql.
+
+
+### Steps to Run the Frontend Application
+
+Navigate to the frontend directory:
+
+```cd ../frontend```
+
+Install the dependencies:
+
+```npm install``` or ```yarn install```
+
+Start the development server with Vite:
+
+```npm run dev```, ```yarn dev``` or ```yarn start```
+
+The frontend application will be available at http://localhost:5173.
+
+Open the app in your browser and start exploring the platform!
+
+### Project Structure
+
+```/foonda
+  ├── /mock-data      # Mock data generation for backend
+  ├── /src            # Source files for frontend (React, Zustand, etc.)
+  ├── /public         # Static assets (images, etc.)
+  ├── package.json    # Project metadata and dependencies
+  ├── tsconfig.json   # TypeScript configuration
+  ├── .env            # Environment variables (API keys, etc.)
+```
+
+
+### Future Enhancements
+
+- Implement dynamic filters for course and career searches.
+- Add user authentication and profiles.
+- Integrate real-world APIs for live bursary and career updates.
+- Provide multi-language support (e.g., English, isiXhosa, isiZulu).
